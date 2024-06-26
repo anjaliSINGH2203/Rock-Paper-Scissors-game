@@ -1,0 +1,97 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Game {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+        int user = 0, comp = 0;
+
+        System.out.println("******  WELCOME TO THE ROCK-PAPER-SCISSORS GAME******\n\n");
+        sleep(2000);
+        System.out.println("...your opponent is the computer itself...\n");
+        sleep(2000);
+        System.out.println("0 denotes rock, 1 denotes scissor, 2 denotes paper");
+        sleep(2000);
+        
+        System.out.println("\n\nYou have to play 5 rounds of the game. The game will end after the computer or you win more than 2 rounds.\n\n");
+        sleep(2000);
+
+        for (int i = 1; i <= 5; i++) {
+            int x = rand.nextInt(3);
+            int choice = -1;
+
+            System.out.println("Round " + i + ":");
+            System.out.println("Enter your choice: ");
+
+            while (true) {
+                if (sc.hasNextInt()) {
+                    choice = sc.nextInt();
+                    if (choice >= 0 && choice <= 2) {
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter 0, 1, or 2.");
+                    }
+                } else {
+                    System.out.println("Invalid input. Please enter a number.");
+                    sc.next(); // Discard the non-integer input
+                }
+            }
+
+            if (x == 0) { // Computer chooses rock
+                if (choice == 1) {
+                    System.out.println("Computer chose rock. Computer won.\n");
+                    comp++;
+                } else if (choice == 2) {
+                    System.out.println("Computer chose rock. You won.\n");
+                    user++;
+                } else {
+                    System.out.println("Computer chose rock. It's a draw.\n");
+                }
+            } else if (x == 1) { // Computer chooses scissor
+                if (choice == 0) {
+                    System.out.println("Computer chose scissor. You won.\n");
+                    user++;
+                } else if (choice == 2) {
+                    System.out.println("Computer chose scissor. Computer won.\n");
+                    comp++;
+                } else {
+                    System.out.println("Computer chose scissor. It's a draw.\n");
+                }
+            } else if (x == 2) { // Computer chooses paper
+                if (choice == 0) {
+                    System.out.println("Computer chose paper. Computer won.\n");
+                    comp++;
+                } else if (choice == 1) {
+                    System.out.println("Computer chose paper. You won.\n");
+                    user++;
+                } else {
+                    System.out.println("Computer chose paper. It's a draw.\n");
+                }
+            }
+
+            if (user > 2 || comp > 2) {
+                break;
+            }
+        }
+
+        if (user > comp) {
+            System.out.println("Congratulations! You won the game.\n");
+        } else if (comp > user) {
+            System.out.println("The computer has won the game.\n");
+        } else {
+            System.out.println("It's a tie!\n");
+        }
+        
+        System.out.println("\n\n*** THE GAME HAS ENDED NOW ***");
+    }
+
+    private static void sleep(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            System.err.println("Thread was interrupted");
+        }
+    }
+}
