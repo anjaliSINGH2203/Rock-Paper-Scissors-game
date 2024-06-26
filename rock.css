@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('https://garden.spoonflower.com/c/12445927/p/f/m/nOrB6_ErmbiKebmwgjJtiJDkyns2nyoHtlYlcjLywb3hvMYsTTA7oZLmng/Rock%20Paper%20Scissors%20-%20dusty%20blue%20-%20fun%20games%20-%20LAD21.jpg') no-repeat center center fixed; /* Add background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    display: flex;
+    justify-content: center; /* Align the container to the left */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-left: 20px; /* Add padding to give some space from the left edge */
+}
+
+.container {
+    width: 80%;
+    max-width: 600px; /* Adjust max-width as needed */
+    background-color: rgb(249, 198, 232); /* Add a slight transparency to the background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(201, 211, 169, 0.1);
+    text-align: center; /* Align text to the left */
+}
+
+h1 {
+    font-size: 2em;
+    color: #9c0808;
+}
+
+.choices {
+    margin: 20px 0;
+}
+
+.choice {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+.choice:hover {
+    background-color: #0056b3;
+}
+
+.display {
+    margin-top: 20px;
+}
+
+.choice-result {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player {
+    margin: 0 20px;
+}
+
+.player p {
+    font-weight: bold;
+}
+
+.player img {
+    width: 100px;
+    height: 100px;
+    display: none; /* Hide images initially */
+}
+
+#final-result {
+    margin-top: 30px;
+    font-size: 1.5em;
+    color: green;
+}
+
+#reset {
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+}
+
+#reset:hover {
+    background-color: #c82333;
+}

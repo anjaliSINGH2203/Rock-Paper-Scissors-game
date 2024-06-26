@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors Game</title>
+    <link rel="stylesheet" href="https://drive.google.com/file/d/17pH0rO9ctfDyd0ljnIZEjesj6ZTeOjUv/preview">
+</head>
+<body>
+    <div class="container">
+        <h1>ROCK-PAPER-SCISSORS GAME</h1>
+        <p id="instructions">You have to play 5 rounds of the game. The game will end after the computer or you win more than 2 rounds. Click a button below to make your choice.</p>
+        <p id="current-round">Current Round: 1</p>
+        
+        <div class="choices">
+            <button class="choice" onclick="playRound(0)">Rock</button>
+            <button class="choice" onclick="playRound(1)">Scissors</button>
+            <button class="choice" onclick="playRound(2)">Paper</button>
+        </div>
+
+        <div class="display">
+            <div class="choice-result">
+                <p id="round-result"></p>
+                <p id="score"></p>
+            </div>
+            <div class="images">
+                <div class="player">
+                    <p>Your choice:</p>
+                    <img id="user-image" src="" alt="">
+                </div>
+                <div class="player">
+                    <p>Computer's choice:</p>
+                    <img id="computer-image" src="" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="final-result"></div>
+        <button id="reset" onclick="resetGame()">Reset Game</button>
+
+        <!-- Audio element for click sound -->
+        <audio id="click-sound">
+            <source src="click.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script src="https://drive.google.com/file/d/1cfGbBxW66idextdMByKcERjp4JKQE58U/preview"></script>
+</body>
+</html>
